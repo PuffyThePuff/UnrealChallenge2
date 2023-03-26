@@ -28,7 +28,7 @@ AUnrealChallenge2Projectile::AUnrealChallenge2Projectile()
 	ProjectileMovement->bShouldBounce = true;
 
 	// Die after 3 seconds by default
-	InitialLifeSpan = 3.0f;
+	// InitialLifeSpan = 3.0f;
 }
 
 void AUnrealChallenge2Projectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
