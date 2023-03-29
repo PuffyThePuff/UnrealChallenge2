@@ -25,6 +25,10 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	UFUNCTION(BlueprintCallable, Category = "Projectile") void ChangeWeaponMode(UTP_WeaponComponent* weaponComponent);
+	UFUNCTION(BlueprintCallable, Category = "Crate") void SetCrate(AActor* spawner);
 
 	UPROPERTY(EditDefaultsOnly, Category = Projectile) TSubclassOf<class AUnrealChallenge2Projectile> ProjectileClass;
+
+protected:
+	AActor* crate;
 };

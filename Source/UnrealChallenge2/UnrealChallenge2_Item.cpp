@@ -27,5 +27,10 @@ void AUnrealChallenge2_Item::Tick(float DeltaTime)
 
 void AUnrealChallenge2_Item::ChangeWeaponMode(UTP_WeaponComponent* weaponComponent) {
 	weaponComponent->SetProjectileMode(ProjectileClass);
+	if (crate) crate->Destroy();
 	Destroy();
+}
+
+void AUnrealChallenge2_Item::SetCrate(AActor* spawner) {
+	crate = spawner;
 }
