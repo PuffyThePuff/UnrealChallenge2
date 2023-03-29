@@ -30,5 +30,5 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = Projectile) TSubclassOf<class AUnrealChallenge2Projectile> ProjectileClass;
 
 protected:
-	AActor* crate;
+	AActor* crate = nullptr;
 };
