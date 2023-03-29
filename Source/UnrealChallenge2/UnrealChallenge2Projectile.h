@@ -15,7 +15,7 @@ class AUnrealChallenge2Projectile : public AActor
 	GENERATED_BODY()
 
 	/** Sphere collision component */
-	UPROPERTY(VisibleDefaultsOnly, Category=Projectile)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Projectile, meta = (AllowPrivateAccess = "true"))
 	USphereComponent* CollisionComp;
 
 	/** Projectile movement component */
@@ -34,4 +34,3 @@ public:
 	/** Returns ProjectileMovement subobject **/
 	UProjectileMovementComponent* GetProjectileMovement() const { return ProjectileMovement; }
 };
-

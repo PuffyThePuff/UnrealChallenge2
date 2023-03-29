@@ -49,6 +49,8 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Weapon")
 	void Fire();
 
+	void SetProjectileMode(TSubclassOf<class AUnrealChallenge2Projectile> newClass);
+
 protected:
 	/** Ends gameplay for this component. */
 	UFUNCTION()

@@ -13,6 +13,7 @@ class USceneComponent;
 class UCameraComponent;
 class UAnimMontage;
 class USoundBase;
+class UTP_WeaponComponent;
 
 UCLASS(config=Game)
 class AUnrealChallenge2Character : public ACharacter
@@ -81,7 +82,4 @@ public:
 	USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
 	/** Returns FirstPersonCameraComponent subobject **/
 	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
-
-
 };
-

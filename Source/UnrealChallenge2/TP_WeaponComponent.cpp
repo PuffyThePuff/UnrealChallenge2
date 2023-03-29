@@ -110,3 +110,7 @@ void UTP_WeaponComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
 		}
 	}
 }
+
+void UTP_WeaponComponent::SetProjectileMode(TSubclassOf<class AUnrealChallenge2Projectile> newClass) {
+	ProjectileClass = newClass;
+}

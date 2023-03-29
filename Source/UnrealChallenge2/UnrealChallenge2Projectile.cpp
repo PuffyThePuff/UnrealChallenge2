@@ -28,7 +28,7 @@ AUnrealChallenge2Projectile::AUnrealChallenge2Projectile()
 	ProjectileMovement->bShouldBounce = true;
 
 	// Die after 3 seconds by default
-	InitialLifeSpan = 3.0f;
+	// InitialLifeSpan = 3.0f;
 }
 
 void AUnrealChallenge2Projectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
@@ -36,7 +36,7 @@ void AUnrealChallenge2Projectile::OnHit(UPrimitiveComponent* HitComp, AActor* Ot
 	// Only add impulse and destroy projectile if we hit a physics
 	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComp != nullptr) && OtherComp->IsSimulatingPhysics())
 	{
-		OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
+		OtherComp->AddImpulseAtLocation(GetVelocity() * 75.0f, GetActorLocation());
 
 		//Destroy();
 	}
