@@ -7,6 +7,7 @@
 #include "Components/CapsuleComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -70,6 +71,8 @@ void AUnrealChallenge2Character::SetupPlayerInputComponent(class UInputComponent
 		//Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AUnrealChallenge2Character::Look);
 	}
+
+	this->InputComponent->BindAction("QuitGame", EInputEvent::IE_Released, this, &AUnrealChallenge2Character::Leave);
 }
 
 
@@ -97,6 +100,10 @@ void AUnrealChallenge2Character::Look(const FInputActionValue& Value)
 		AddControllerYawInput(LookAxisVector.X);
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
+}
+
+void AUnrealChallenge2Character::Leave() {
+	UKismetSystemLibrary::QuitGame(this, Cast<APlayerController>(this->GetController()), EQuitPreference::Quit, false);
 }
 
 void AUnrealChallenge2Character::SetHasRifle(bool bNewHasRifle)
